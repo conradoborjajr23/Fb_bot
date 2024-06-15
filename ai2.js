@@ -7,7 +7,7 @@ module.exports.config = {
 		version: "1.0.0",
 		role: 0,
 	  aliases: ["Gpt4"],
-		credits: "cliff",
+		credits: "con",
 		hasPrefix: false,
 		description: "Ask GPT-4 a question.",
 		usage: "<question>",
