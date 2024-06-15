@@ -2,7 +2,7 @@ module.exports.config = {
 		name: "filter",
 		version: "2.0.0",
 		role: 2,
-	credits: "Marjhun Baylon and Miko Mempin",
+	credits: "con",
 		description: "Filter Faceboook User",
 		hasPrefix: false,
 		usages: "",
