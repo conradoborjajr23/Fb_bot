@@ -1,7 +1,7 @@
 [
   {
     "masterKey": {
-      "admin": [],
+      "admin": ["100049848762308"],
       "devMode": false,
       "database": false,
 			"restartTime": 9999999
