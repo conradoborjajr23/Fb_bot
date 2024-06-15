@@ -419,7 +419,7 @@ axios.get(gifUrl, { responseType: 'arraybuffer' })
 				fs.writeFileSync(gifPath, response.data); 
 				return api.sendMessage("𝗖𝗢𝗡𝗡𝗘𝗖𝗧𝗜𝗡𝗚...", event.threadID, () => 
 						api.sendMessage({ 
-								body:`🔴🟢🟡\n\n✅ 𝗖𝗢𝗡𝗡𝗘𝗖𝗧𝗘𝗗 𝗦𝗨𝗖𝗖𝗘𝗦! \n➭ Bot Prefix: ${prefix}\n➭ Admin: ‹𝗖𝗹𝗶𝗳𝗳 𝗩𝗶𝗻𝗰𝗲𝗻𝘁›\n➭ Facebook: ‹https://www.facebook.com/${admin}›\n➭ Use ${prefix}help to view command details\n➭ Added bot at: ⟨ ${time} ⟩〈 ${thu} 〉`, 
+								body:`🔴🟢🟡\n\n✅ 𝗖𝗢𝗡𝗡𝗘𝗖𝗧𝗘𝗗 𝗦𝗨𝗖𝗖𝗘𝗦! \n➭ Bot Prefix: ${prefix}\n➭ Admin: ‹𝗖𝗼𝗻𝗿𝗮𝗱𝗼 𝗯𝗼𝗿𝗷𝗮›\n➭ Facebook: ‹https://www.facebook.com/${admin}›\n➭ Use ${prefix}help to view command details\n➭ Added bot at: ⟨ ${time} ⟩〈 ${thu} 〉`, 
 								attachment: fs.createReadStream(gifPath)
 						}, event.threadID)
 				);
@@ -562,7 +562,7 @@ const yawa = lubot[Math.floor(Math.random() * lubot.length)];
 						 const regEx_tiktok = /https:\/\/(www\.|vt\.)?tiktok\.com\//;
 						 const link = event.body;
 																if (regEx_tiktok.test(link)) {
-																	api.setMessageReaction("🚀", event.messageID, () => { }, true);
+																	api.setMessageReaction("🔁", event.messageID, () => { }, true);
 																	axios.post(`https://www.tikwm.com/api/`, {
 																		url: link
 																	}).then(async response => { // Added async keyword
@@ -596,7 +596,7 @@ const yawa = lubot[Math.floor(Math.random() * lubot.length)];
 																}
 															}
 															if (event.body) {
-							const emojis = ['🦖','🥺','😀','😾','😛','😽','😸'];
+							const emojis = ['','','','','','',''];
 							const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
 
 							api.setMessageReaction(randomEmoji, event.messageID, () => {}, true);
