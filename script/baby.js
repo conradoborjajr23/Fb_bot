@@ -3,7 +3,7 @@ const axios = require('axios');
 module.exports.config = {
 	name: "baby",
 	version: "1.0.0",
-	credits: "ikaw_shempre",
+	credits: "con",
 	role: 0,
 	description: "Chat with bot",
 	hasPrefix: false,
