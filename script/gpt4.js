@@ -3,7 +3,7 @@ const { RsnChat } = require("rsnchat");
 const rsnchat = new RsnChat("rsnai_q6XwhE3xUtjjW3SwxiO5xq9o");
 
 module.exports.config = {
-		name: "gpt4",
+		name: "ai2",
 		version: "1.0.0",
 		role: 0,
 	  aliases: ["Gpt4"],
