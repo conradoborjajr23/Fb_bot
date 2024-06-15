@@ -59,7 +59,7 @@ module.exports.config = {
 	aliases: ['help'],
 	description: "Beginner's guide",
 	usage: "Help [page] or [command]",
-	credits: 'Develeoper',
+	credits: 'Con',
 };
 
 module.exports.run = async function ({
