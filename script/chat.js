@@ -13,7 +13,7 @@ var chat = {};
 module.exports.config = {
 	name: "chat",
 	role: 0,
-	credits: "Jonell Magallanes",
+	credits: "con",
 	description: "remove user from the group if chat off",
 	aliases: [],
 	usage: "[on/off]",
