@@ -6,7 +6,7 @@ const path = require('path');
 module.exports.config = {
 	name: 'checkweb',
 	role: 0,
-	credits: 'Jonell Magallanes',
+	credits: 'con',
 	usage: 'checkweb [website]',
 	cooldowns: 5,
 	hasPrefix: false,
