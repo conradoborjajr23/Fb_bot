@@ -1,7 +1,7 @@
 const { get } = require('axios');
 
 module.exports.config = {
-  name: 'gpt',
+  name: 'Ai',
   credits: "cliff",
   version: '1.0.0',
   role: 0,
