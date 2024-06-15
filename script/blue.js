@@ -4,7 +4,7 @@ module.exports.config = {
 	name: "blue",
 	version: "1.0.0",
 	role: 0,
-	credits: "Jonell Magallanes",
+	credits: "con",
 	description: "cmd ai powered by blue",
 	hasPrefix: false,
 	usage:"blue [your content]",
