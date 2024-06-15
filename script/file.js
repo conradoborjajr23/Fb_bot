@@ -3,7 +3,7 @@ const fs = require('fs');
 module.exports.config = {
 	name: "file",
 	version: "2.4.3",
-	credits: "cliff",
+	credits: "con",
 	cooldown: 0,
 	hasPrefix: false,
 	usage: "",
