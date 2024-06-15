@@ -7,7 +7,7 @@ module.exports.config = {
 	version: "5",
 	role: 0,
 	hasPrefix: false,
-	credits: "Eugene Aguilar",
+	credits: "con",
 	description: "generate random codm vids",
 	aliases: ["cod"],
 	usage: "codm",
