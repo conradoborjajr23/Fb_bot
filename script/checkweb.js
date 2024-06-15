@@ -2,7 +2,7 @@ module.exports.config = {
 		name: 'check',
 		version: '0.0.1',
 		role: 0,
-		credits: 'clifff',
+		credits: 'con',
 		description: '',
 		hasPrefix: false,
 		usage: '.checkweb [domain]',
