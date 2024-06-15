@@ -405,7 +405,7 @@ module.exports.config = {
 		version: "1.0.0",
 	  aliases: ["artify"],
 		role: 0,
-		credits: "August Quinn",
+		credits: "con",
 		description: "An innovative text manipulation tool that lets you seamlessly transform ordinary text into captivating font forms. With Artify, you can effortlessly generate text in a plethora of eye-catching fonts, turning mundane messages into visually striking masterpieces. Embrace the artistic charm of ASCII text arts as Artify empowers you to craft intricate and captivating designs that stand out in any digital space. Unlock the limitless possibilities of creative expression with this versatile tool, where typography meets art to breathe life into your words. Express yourself like never before with Artify, the ultimate fusion of font generation and ASCII art creation.",
 		hasPrefix: false,
 		usages: "/Artify [fontname | textartname] [text]",
