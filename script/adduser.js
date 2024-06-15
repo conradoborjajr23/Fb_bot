@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "adduser",
 	version: "1.0.1",
 	role: 0,
-	credits: "cliff",
+	credits: "con",
 	description: "Add user to group by id",
 	hasPrefix: false,
 	usage: "[args]",
