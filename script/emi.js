@@ -11,7 +11,7 @@ module.exports.config = {
 	version: "1.0.0",
 	role: 0,
 	hasPrefix: false,
-	credits: "Deku",
+	credits: "con",
 	description: "Generate image in emi",
 	usages: "[prompt]",
 	cooldown: 5,
