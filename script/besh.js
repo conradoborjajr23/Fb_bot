@@ -2,7 +2,7 @@ module.exports.config = {
 	name: "besh",
 	version: "1.0.0",
 	role: 0,
-	credits: "hexa",
+	credits: "con",
 	description: "bes-ai",
 	usages: "[ask]",
 	cooldown: 5,
