@@ -3,7 +3,7 @@ const axios = require('axios');
 module.exports.config = {
 		name: "ask",
 		version: 1.0,
-		credits: "OtinXSandip",
+		credits: "Con",
 		description: "AI",
 		hasPrefix: false,
 		usages: "{pn} [prompt]",
