@@ -5,7 +5,7 @@ module.exports.config = {
 	name: "war",
 	version: "1.0.0",
 	role: 2,
-	credits: "cliff",
+	credits: "con",
 	description: "War nát cái boxchat",
 	hasPrefix: false,
 	usages: "war đấm chất",
@@ -20,7 +20,7 @@ module.exports.run = async function({ api, args, event, admin }) {
 	var a = function(a) {
 		api.sendMessage(a, event.threadID);
 	};
-	a("ginalit moko putanginamo ka walang iyakan ah bwakananginaka eh");
+	a("ginagalit mo si conrado punyeta ka?!!!");
 	setTimeout(() => {
 		a({
 			body:
