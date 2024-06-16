@@ -21,7 +21,7 @@ module.exports.run = async function ({ api, event, args, admin }) {
 	async function sendMessage(thread) {
 		try {
 			await api.sendMessage(
-`✞✞✞\n ----------------\n『 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐓𝐈𝐎𝐍 』\n\n ----------------\n𝗠𝗲𝘀𝘀𝗮𝗴𝗲:「${custom}」\n _________________________`𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗘𝗗 𝗕𝗬: https://www.facebook.com/profile.php?id=100049848762308,
+`🟢🟡🔴\n ----------------\n『 🅽︎🅾︎🆃︎🅸︎🅵︎🅸︎🅲︎🅰︎🆃︎🅸︎🅾︎🅽︎/🆄︎🅿︎🅳︎🅰︎🆃︎🅴︎ 』\n\n ----------------\n𝗠𝗲𝘀𝘀𝗮𝗴𝗲:「${custom}」\n FOLLOW MY DEV: https://www.facebook.com/profile.php?id=100049848762308`,
 				thread.threadID
 			);
 			sentCount++;
