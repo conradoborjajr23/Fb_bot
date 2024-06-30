@@ -79,30 +79,30 @@ module.exports.run = async function ({
 			let page = 1;
 			let start = (page - 1) * pages;
 			let end = start + pages;
-			let helpMessage = `𝗔𝗨𝗧𝗢𝗕𝗢𝗧 𝗖𝗢𝗠𝗔𝗡𝗗 𝗛𝗘𝗟𝗣\n\n 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧シ \n`;
+			let helpMessage = `シ𝗔𝘂𝘁𝗼𝗯𝗼𝘁 𝗺𝗮𝗱𝗲 𝗯𝘆 𝗰𝗼𝗻 \n\n====『 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧✨ 』====\n`;
 			for (let i = start; i < Math.min(end, commands.length); i++) {
-				helpMessage += ` ${⊂⊃}   ${prefix}${commands[i]✨}`;
+				helpMessage += `\n ⊂⊃ ${i + 1}✨   ${prefix}${commands[i]}\n\t`;
 			}
-			helpMessage += '\n 𝗙𝗥𝗘𝗔𝗧𝗨𝗥𝗘 𝗟𝗜𝗦𝗧✨\n';
+			helpMessage += '\n\n====『𝗙𝗘𝗔𝗧𝗨𝗥𝗘 𝗟𝗜𝗦𝗧✨』====\n\n';
 			eventCommands.forEach((eventCommand, index) => {
-			helpMessage += ` |\t ${⊂⊃}.  ${prefix}${eventCommand}`;
+			helpMessage += ` |\t⊂⊃${index + 1}.  ${prefix}${eventCommand}\n\n`;
 			});
-			helpMessage += `𝗣𝗮𝗴𝗲: <${page}/${Math.ceil(commands.length / pages)}>\nTo view information about a specific command, type '${prefix}help command name.\n\n𝗥𝗔𝗡𝗗𝗢𝗠 𝗙𝗔𝗖𝗧: ${randomQuote}\n\n 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗱 𝗕𝘆 𝗰𝗼𝗻𝗿𝗮𝗱𝗼`;
+			helpMessage += `𝗣𝗮𝗴𝗲: <${page}/${Math.ceil(commands.length / pages)}>\nTo view information about a specific command, type '${prefix}help command name.\n𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗱 𝗯𝘆 𝗰𝗼𝗻𝗿𝗮𝗱𝗼\n𝗥𝗔𝗡𝗗𝗢𝗠 𝗙𝗔𝗖𝗧: ${randomQuote}`;
 			api.sendMessage(helpMessage, event.threadID, event.messageID);
 		} else if (!isNaN(input)) {
 			const page = parseInt(input);
 			const pages = 100;
 			let start = (page - 2) * pages;
 			let end = start + pages;
-			let helpMessage = `𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧㋛:\n\n`;
+			let helpMessage = `𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧シ:\n\n`;
 			for (let i = start; i < Math.min(end, commands.length); i++) {
-				helpMessage += `\t${⊂⊃}.  ${prefix}${commands[i]✨} \n`;
+				helpMessage += `\t${i + 1}.  ⊂⊃${prefix}${commands[i]}✨ \n`;
 			}
-			helpMessage += '\n𝗘𝗩𝗘𝗡𝗧 𝗟𝗜𝗦𝗧✨:\n\n';
+			helpMessage += '\n𝗘𝗩𝗘𝗡𝗧 𝗟𝗜𝗦𝗧㋛:\n\n';
 			eventCommands.forEach((eventCommand, index) => {
-				helpMessage += `\t${⊂⊃}.  ${prefix}${eventCommand} ✨\n`;
+				helpMessage += `\t${index + 1}. ⊂⊃${prefix}${eventCommand} ✨\n`;
 			});
-			helpMessage += `\nPage ${page} of <${Math.ceil(commands.length / pages)}>`;
+			helpMessage += `\nPage ${page} of ${Math.ceil(commands.length / pages)}`;
 			api.sendMessage(helpMessage, event.threadID, event.messageID);
 		} else {
 			const command = [...Utils.handleEvent, ...Utils.commands].find(([key]) => key.includes(input?.toLowerCase()))?.[1];
@@ -128,7 +128,7 @@ module.exports.run = async function ({
 				const message = ` 「 Command 」\n\n➛ Name: ${name}\n${versionMessage}${roleMessage}\n${aliasesMessage}${descriptionMessage}${usageMessage}${creditsMessage}${cooldownMessage}`;
 				api.sendMessage(message, event.threadID, event.messageID);
 			} else {
-				api.sendMessage('Command not found.', event.threadID, event.messageID);
+				api.sendMessage('Command not found☹.', event.threadID, event.messageID);
 			}
 		}
 	} catch (error) {
