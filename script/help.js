@@ -59,7 +59,7 @@ module.exports.config = {
 	aliases: ['help'],
 	description: "Beginner's guide",
 	usage: "Help [page] or [command]",
-	credits: 'Con',
+	credits: 'Develeoper',
 };
 
 module.exports.run = async function ({
@@ -79,30 +79,30 @@ module.exports.run = async function ({
 			let page = 1;
 			let start = (page - 1) * pages;
 			let end = start + pages;
-			let helpMessage = `🅰︎🆄︎🆃︎🅾︎🅱︎🅾︎🆃︎ 🅼︎🅰︎🅳︎🅴︎ 🅱︎🆈︎ 🅲︎🅾︎🅽︎\n\n====『🅲︎🅾︎🅽︎ 🅱︎🅾︎🆃︎ 🅲︎🅾︎🅼︎🅼︎🅰︎🅽︎🅳︎ 🅻︎🅸︎🆂︎🆃︎』====`;
+			let helpMessage = `𝗔𝗨𝗧𝗢𝗕𝗢𝗧 𝗖𝗢𝗠𝗔𝗡𝗗 𝗛𝗘𝗟𝗣\n\n 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧シ \n`;
 			for (let i = start; i < Math.min(end, commands.length); i++) {
-				helpMessage += `\n ⊂⊃ ➥ ${i + 1}✨${prefix}${commands[i]}\n\t`;
+				helpMessage += ` ${⊂⊃}   ${prefix}${commands[i]✨}`;
 			}
-			helpMessage += '\n\n====『🅵︎🆁︎🅴︎🅰︎🆃︎🆄︎🆁︎🅴︎ 🅾︎🅵︎ 🅲︎🅾︎🅼︎🅼︎🅰︎🅽︎🅳︎🆂︎』====\n';
+			helpMessage += '\n 𝗙𝗥𝗘𝗔𝗧𝗨𝗥𝗘 𝗟𝗜𝗦𝗧✨\n';
 			eventCommands.forEach((eventCommand, index) => {
-			helpMessage += `\n |\t ⊂⊃ ➥  ${index + 1}.✨  ${prefix}${eventCommand}\n\n\n`;
+			helpMessage += ` |\t ${⊂⊃}.  ${prefix}${eventCommand}`;
 			});
-			helpMessage += `𝗣𝗮𝗴𝗲: 『${page}/${Math.ceil(commands.length / pages)}』\nTo view information about a specific command, type '${prefix}help command name.\n\n🆁︎🅰︎🅽︎🅳︎🅾︎🅼︎ 🅵︎🅰︎🅲︎🆃︎: ${randomQuote}`;
+			helpMessage += `𝗣𝗮𝗴𝗲: <${page}/${Math.ceil(commands.length / pages)}>\nTo view information about a specific command, type '${prefix}help command name.\n\n𝗥𝗔𝗡𝗗𝗢𝗠 𝗙𝗔𝗖𝗧: ${randomQuote}\n\n 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗱 𝗕𝘆 𝗰𝗼𝗻𝗿𝗮𝗱𝗼`;
 			api.sendMessage(helpMessage, event.threadID, event.messageID);
 		} else if (!isNaN(input)) {
 			const page = parseInt(input);
 			const pages = 100;
 			let start = (page - 2) * pages;
 			let end = start + pages;
-			let helpMessage = `𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧:\n\n`;
+			let helpMessage = `𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧㋛:\n\n`;
 			for (let i = start; i < Math.min(end, commands.length); i++) {
-				helpMessage += `\t${i + 1}. 『 ${prefix}${commands[i]} 』\n`;
+				helpMessage += `\t${⊂⊃}.  ${prefix}${commands[i]✨} \n`;
 			}
-			helpMessage += '\n𝗘𝗩𝗘𝗡𝗧 𝗟𝗜𝗦𝗧:\n\n';
+			helpMessage += '\n𝗘𝗩𝗘𝗡𝗧 𝗟𝗜𝗦𝗧✨:\n\n';
 			eventCommands.forEach((eventCommand, index) => {
-				helpMessage += `\t${index + 1}. 『 ${prefix}${eventCommand} 』\n`;
+				helpMessage += `\t${⊂⊃}.  ${prefix}${eventCommand} ✨\n`;
 			});
-			helpMessage += `\nPage ${page} of ${Math.ceil(commands.length / pages)}`;
+			helpMessage += `\nPage ${page} of <${Math.ceil(commands.length / pages)}>`;
 			api.sendMessage(helpMessage, event.threadID, event.messageID);
 		} else {
 			const command = [...Utils.handleEvent, ...Utils.commands].find(([key]) => key.includes(input?.toLowerCase()))?.[1];
