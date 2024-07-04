@@ -1,12 +1,12 @@
 const { get } = require('axios');
 
 module.exports.config = {
-  name: 'ai4',
+  name: 'ai',
   credits: "con",
   version: '1.0.0',
   role: 0,
   aliases: ["Gpt"],
-  cooldown: 0,
+  cooldown: 4,
   hasPrefix: false,
   usage: "",
 };
