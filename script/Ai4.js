@@ -6,7 +6,7 @@ module.exports.config = {
   version: '1.0.0',
   role: 0,
   aliases: ["Gpt"],
-  cooldown: 4,
+  cooldown: 1,
   hasPrefix: false,
   usage: "",
 };
@@ -19,7 +19,7 @@ module.exports.run = async function ({ api, event, args }) {
 
   const url = "https://hercai.onrender.com/v3/hercai";
 
-  if (!question) return sendMessage("Please provide a question.");
+  if (!question) return sendMessage("Please provide a question to begin ✨");
 
   try {
     const response = await get(`${url}?question=${encodeURIComponent(question)}`);
