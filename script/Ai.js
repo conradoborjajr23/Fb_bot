@@ -7,7 +7,7 @@ module.exports.config = {
     description: "continues ai command",
     hasPrefix: false,
     cooldown: 3,
-    aliases: ["mixtral"]
+    aliases: ["ai,bot,chatbot,con"]
 };
 
 module.exports.run = async function ({ api, event, args }) {
@@ -17,7 +17,7 @@ module.exports.run = async function ({ api, event, args }) {
             return api.sendMessage("Please provide a question. For example: ai what is your name?", event.threadID, event.messageID);
         }
 
-        api.sendMessage("Mixtral answering, please wait...", event.threadID, async (err, info) => {
+        api.sendMessage("𝗖𝗢𝗡 𝗕𝗢𝗧✔, 𝗣𝗹𝗲𝗮𝘀𝗲 𝘄𝗮𝗶𝘁... \n\n if the loading or error occurred try using ai4 or gpt3", event.threadID, async (err, info) => {
             if (err) {
                 console.error("Error sending initial message:", err);
                 return api.sendMessage("An error occurred while processing your request.", event.threadID);
@@ -33,11 +33,11 @@ module.exports.run = async function ({ api, event, args }) {
                 const answer = response.data.result;
 
                 
-                const finalMessage = `${answer}\n\nAsked by👥: ${senderName}`;
+                const finalMessage = `${answer}\n\n𝗔𝘀𝗸𝗲𝗱 𝗕𝗬: ${senderName}`;
                 api.sendMessage(finalMessage, event.threadID);
             } catch (error) {
                 console.error("Error fetching AI response or user info:", error);
-                api.sendMessage("An error occurred while processing your request.", event.threadID);
+                api.sendMessage("An error occurred while processing your request try using ai2 or gpt3 for temporary", event.threadID);
             }
         });
     } catch (error) {
