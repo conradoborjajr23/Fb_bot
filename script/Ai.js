@@ -33,7 +33,7 @@ module.exports.run = async function ({ api, event, args }) {
                 const answer = response.data.result;
 
                 
-                const finalMessage = `${answer}\n\nAsked by: ${senderName}`;
+                const finalMessage = `${answer}\n\nAsked by👥: ${senderName}`;
                 api.sendMessage(finalMessage, event.threadID);
             } catch (error) {
                 console.error("Error fetching AI response or user info:", error);
