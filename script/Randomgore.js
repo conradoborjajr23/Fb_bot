@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 module.exports.config = {
-    name: "randomgore",
+    name: "e",
     version: "1.0.0",
     role: 2,
     credits: "chill", 
