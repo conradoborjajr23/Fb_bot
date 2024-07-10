@@ -6,7 +6,7 @@ module.exports.config = {
   credits: "cliff",
   description: 'Scraping Web and api/output',
   usePrefix: false,
-  hasPrefix: false,
+  hasPrefix: true,
   commandCategory: 'url',
   usage: '{pn} [url]',
   usages: '{pn} [url]',
