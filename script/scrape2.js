@@ -1,8 +1,8 @@
 module.exports.config = {
   name: 'scrape',
   version: '1.1.1',
-  hasPermssion: 0,
   role: 2,
+  hasPermssion: 0,
   credits: "cliff",
   description: 'Scraping Web and api/output',
   usePrefix: false,
