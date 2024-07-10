@@ -14,7 +14,7 @@ module.exports.config = {
   cooldowns: 0,
 };
 
-module.exports. run = async function({ api, event, args }) {
+module.exports.run = async function({ api, event, args }) {
   const axios = require('axios');
 
   let url = args.join(' ');
