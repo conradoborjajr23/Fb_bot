@@ -230,7 +230,7 @@ app.post('/login', async (req, res) => {
 		});
 	}
 });
-const port = process.env.PORT || 8206;
+const port = process.env.PORT || 8235;
 app.listen(port, () => {
 	console.log(`
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
