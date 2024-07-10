@@ -11,35 +11,31 @@ module.exports.config = {
     role: 0,
     hasPrefix: false,
     credits: "cliff",
-    description: "screenshot url",
+    description: "screenshot web",
     usages: "[url]",
     cooldown: 5,
     aliases: ["ss"]
 };
 
-module.exports. run = async function ({ api, event, args }) {
+module.exports["run"] = async function ({ api, event, args }) {
     function r(msg) {
         api.sendMessage(msg, event.threadID, event.messageID);
     }
 
     const a = args.join(" ");
-    if (!a) return r('Missing url');
+    if (!a) return r('provide url first!');
 
-    const cliff = await new Promise(resolve => {
-        api.sendMessage(`taking screenshot for '${a}' please wait...`, event.threadID, (err, info1) => {
-            resolve(info1);
-        }, event.messageID);
+    const cliff = await new Promise(resolve => { api.sendMessage(`Taking screenshot for ${a}...`, event.threadID, (err, info1) => {
+      resolve(info1);
+     }, event.messageID);
     });
-
     try {
         const d = (await get(url + '/ss?url=' + encodeURIComponent(a), {
             responseType: 'arraybuffer'
         })).data;
         fs.writeFileSync(f, Buffer.from(d, "utf8"));
-        r({ body: `Here is the screenshot`, attachment: fs.createReadStream(f) });
-        fs.unlinkSync(f);
-   api.unsendMessage(cliff.messageID);
+        return r({ attachment: fs.createReadStream(f) });
     } catch (e) {
-        r(e.message);
+        return r(e.message);
     }
 };
