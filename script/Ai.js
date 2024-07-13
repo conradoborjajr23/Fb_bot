@@ -1,6 +1,6 @@
 module.exports.config = {
   name: "ai",
-  version: "0.0.2",
+  version: "1.1.1",
   role: 0,
   aliases: [],
   hasPrefix: false,
