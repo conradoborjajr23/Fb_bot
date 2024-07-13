@@ -29,7 +29,7 @@ module.exports.run = async function ({ api, event, args }) {
                 const senderName = userInfo[event.senderID].name;
 
         
-                const response = await axios.get(`https://joshweb.click/api/mixtral-8b?q=${encodeURIComponent(q)}`);
+                const response = await axios.get(`https://hercai.onrender.com/v3/hercai`);
                 const answer = response.data.result;
 
                 
