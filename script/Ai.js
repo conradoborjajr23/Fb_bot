@@ -3,7 +3,7 @@ module.exports.config = {
   version: "1.1.1",
   role: 0,
   aliases: [],
-  hasPrefix: false,
+  hasPrefix: true,
   credits: "con",
   description: "",
   usage: "",
@@ -18,7 +18,7 @@ module.exports.run = async function ({ api, event, args }) {
   if (!np) {
           return api.sendMessage('Please provide a question first!', event.threadID, event.messageID);
       }
-  const cliff = await new Promise(resolve => { api.sendMessage('𝗚𝗣𝗧-𝟰 (ARCHITECTURE)\n▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱\n🔍 Searching Please Wait....', event.threadID, (err, info1) => {
+  const cliff = await new Promise(resolve => { api.sendMessage('𝗚𝗣𝗧-𝟰 (𝗖𝗢𝗡 𝗕𝗢𝗧)\n▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱\n🔍 Searching Please Wait....', event.threadID, (err, info1) => {
       resolve(info1);
      }, event.messageID);
     });
@@ -48,7 +48,7 @@ module.exports.run = async function ({ api, event, args }) {
     }
         const reminder = "When your bot doesn't work anymore, it means the server is off or I updated to the latest commands and the API is dead. Go back to the link:\nhttp://192.210.175.9:5037/\nhttps://main--autobot-psi-moshimosh.netlify.app";
     const answer = data.gpt;
-    const msg = `𝗚𝗣𝗧-𝟰 (𝗰𝗼𝗻 𝗯𝗼𝘁)\n▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱\n${answer}\n▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱`;
+    const msg = `𝗚𝗣𝗧-𝟰 (𝗰𝗼𝗻 𝗯𝗼𝘁)\n▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱\n${answer}\n▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱\n\n 𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗘𝗗 𝗪𝗜𝗧𝗛 𝗖𝗟𝗜𝗙𝗙/𝗖𝗢𝗡𝗥𝗔𝗗𝗢 𝗪𝗜𝗧𝗛 ♡ \n\n try using ai4 for better info`;
     try {
       await api.editMessage(msg, cliff.messageID);
     } catch (error) {
