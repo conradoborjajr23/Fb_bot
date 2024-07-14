@@ -1,7 +1,7 @@
 const { get } = require('axios');
 
 module.exports.config = {
-  name: 'ai',
+  name: 'ai4',
   credits: "con",
   version: '1.0.0',
   role: 0,
@@ -17,9 +17,9 @@ module.exports.run = async function ({ api, event, args }) {
     api.sendMessage(msg, event.threadID, event.messageID);
   }
 
-  const url = "https://joshweb.click/api/gpt-4o?q=hi&uid=";
+  const url = "https://hercai.onrender.com/v3/hercai";
 
-  if (!question) return sendMessage("Please provide a question to begin ✨");
+  if (!question) return sendMessage("Please provide a question to begin âœ¨");
 
   try {
     const response = await get(`${url}?question=${encodeURIComponent(question)}`);
