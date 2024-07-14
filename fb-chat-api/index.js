@@ -175,6 +175,7 @@ function buildAPI(globalOptions, html, jar) {
     'createPoll',
     'deleteMessage',
     'deleteThread',
+       'editMessage',
     'forwardAttachment',
     'getCurrentUserID',
     'getEmojiUrl',
@@ -204,7 +205,6 @@ function buildAPI(globalOptions, html, jar) {
     'setTitle',
     'threadColors',
     'unsendMessage',
-    'editMessage',
 
     // HTTP
     'httpGet',
