@@ -1,13 +1,12 @@
-// Define the module configuration
 module.exports.config = {
-    name: "fbcoverv1",
+    name: "fbcoverv2",
     version: "1.0.0",
     role: 0,
     credits: "chill",
-    description: "Generate a Facebook cover image",
+    description: "Generate Facebook cover photo v2",
     hasPrefix: false,
-    aliases: ["fbcoverv1", "fbcv1"],
-    usage: "[fbcoverv1 <name> <id> <subname> <color>]",
+    aliases: ["fbcoverv2"],
+    usage: "[fbcoverv2 name | birthday | love | location | hometown | follow | gender]",
     cooldown: 5
 };
 
@@ -17,45 +16,44 @@ const path = require("path");
 
 module.exports.run = async function({ api, event, args }) {
     try {
-        // Destructure the arguments
-        const [name, id, subname, color] = args;
+        const input = args.join(" ");
+        const [name, birthday, love, location, hometown, follow, gender] = input.split(" | ");
 
-        // Check if all required arguments are provided
-        if (!name || !id || !subname || !color) {
-            api.sendMessage("Usage: fbcoverv1 <name> <id> <subname> <color>", event.threadID);
-            return;
+        if (!name || !birthday || !love || !location || !hometown || !follow || !gender) {
+            return api.sendMessage("Please provide all required parameters: fbcoverv2 <name> | <birthday> | <love> | <location> | <hometown> | <follow> | <gender>.", event.threadID);
         }
 
-        // Construct the API URL
-        const url = `https://hiroshi-rest-api.replit.app/canvas/fbcoverv1?name=${encodeURIComponent(name)}&id=${encodeURIComponent(id)}&subname=${encodeURIComponent(subname)}&color=${encodeURIComponent(color)}`;
-        const imagePath = path.join(__dirname, "fbcoverv1.png");
+        const userProfileUrl = `https://graph.facebook.com/${event.senderID}/picture?type=large`;
+        const profilePicPath = path.join(__dirname, "profilePic.jpg");
 
-        // Notify the user that the image is being generated
-        api.sendMessage("Generating your Facebook cover, please wait...", event.threadID);
-
-        // Fetch the image from the API
-        const response = await axios({
-            url: url,
+        const profilePicResponse = await axios({
+            url: userProfileUrl,
             method: 'GET',
             responseType: 'stream'
         });
 
-        // Create a writable stream to save the image
-        const writer = fs.createWriteStream(imagePath);
-        response.data.pipe(writer);
+        const writer = fs.createWriteStream(profilePicPath);
+        profilePicResponse.data.pipe(writer);
 
-        // Handle the finish event of the writable stream
-        writer.on('finish', () => {
-            // Send the image as an attachment
+        writer.on('finish', async () => {
+            const apiUrl = `https://joshweb.click/canvas/fbcoverv3?name=${encodeURIComponent(name)}&birthday=${encodeURIComponent(birthday)}&love=${encodeURIComponent(love)}&location=${encodeURIComponent(location)}&hometown=${encodeURIComponent(hometown)}&follow=${encodeURIComponent(follow)}&gender=${encodeURIComponent(gender)}&uid=${event.senderID}`;
+
+            api.sendMessage("Generating Facebook cover photo, please wait...", event.threadID);
+
+            const response = await axios.get(apiUrl, { responseType: 'arraybuffer' });
+            const coverPhotoPath = path.join(__dirname, "fbCover.jpg");
+
+            fs.writeFileSync(coverPhotoPath, response.data);
+
             api.sendMessage({
-                attachment: fs.createReadStream(imagePath)
+                body: "Here is your customized Facebook cover photo:",
+                attachment: fs.createReadStream(coverPhotoPath)
             }, event.threadID, () => {
-                // Clean up the file after sending
-                fs.unlinkSync(imagePath);
+                fs.unlinkSync(profilePicPath);
+                fs.unlinkSync(coverPhotoPath);
             });
         });
 
-        // Handle errors during the writing process
         writer.on('error', (err) => {
             console.error('Stream writer error:', err);
             api.sendMessage("An error occurred while processing the request.", event.threadID);
