@@ -42,10 +42,10 @@ module.exports.run = async ({ api, event }) => {
         architecture: chilli.arch()
     };
 
-    const botName = "CHILLI BOT";
-    const instag = "chillimansi";
-    const ghub = "churchillitos";
-    const fb = "Churchill Ag";
+    const botName = "Con bot";
+    const instag = "crashdump2";
+    const ghub = "conradoborjajr23";
+    const fb = "Crash dump";
 
     const avatarId = Math.floor(Math.random() * 800) + 1;
 
