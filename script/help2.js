@@ -9,7 +9,7 @@ module.exports.config = {
     credits: 'Developer',
 };
 
-module😧.exports.😧run = async function ({
+module.exports.run = async function ({
     api,
     event,
     enableCommands,
