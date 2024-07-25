@@ -1,7 +1,7 @@
 module.exports.config = {
   name: "rules",
   version: "1.0.2",
-  role: 2,
+  role: 0,
   credits: "cliff",
   description: "Rules of the group",
   hasPrefix: false,
